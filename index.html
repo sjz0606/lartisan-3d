@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'artisan — jelato va sorbetlar, Toshkent</title>
+<meta name="description" content="L'artisan: O'zbekistonning eng yaxshi mahsulotlaridan jelato va sorbetlar. Labzak, Abdulla Qodiriy 33, Toshkent. Har kuni 8:00–24:00.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="robots" content="noindex, nofollow">  <!-- demo: remove after the client approves -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&family=Onest:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --ink: #1C2A12;
+    --ink-soft: #55624A;
+    --pista: #C9DA9C;
+    --pista-pale: #F1F5E6;
+    --pista-deep: #4E6B2A;
+    --apricot: #F28A2E;
+    --display: "Unbounded", system-ui, sans-serif;
+    --body: "Onest", system-ui, sans-serif;
+    --pad: clamp(1.25rem, 4.5vw, 4.5rem);
+    --ease: cubic-bezier(.2, .7, .1, 1);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  body {
+    margin: 0; background: var(--white); color: var(--ink);
+    font: 400 1.0625rem/1.6 var(--body); -webkit-font-smoothing: antialiased; overflow-x: clip;
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  :focus-visible { outline: 2px solid var(--apricot); outline-offset: 4px; border-radius: 6px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---------- header ---------- */
+  .bar {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    display: flex; align-items: center; gap: 2rem; padding: 1rem var(--pad);
+    mix-blend-mode: normal; transition: transform .5s var(--ease), background-color .3s;
+  }
+  .bar.is-hidden { transform: translateY(-110%); }
+  .bar.is-solid { background: rgba(255,255,255,.86); backdrop-filter: blur(14px); }
+  .wordmark { font: 700 1.15rem/1 var(--display); letter-spacing: -.02em; text-decoration: none; }
+  .nav { display: flex; gap: 1.75rem; margin-left: auto; }
+  .nav a { text-decoration: none; font-size: .95rem; color: var(--ink-soft); transition: color .2s; }
+  .nav a:hover { color: var(--ink); }
+  .lang { display: flex; background: var(--pista-pale); border-radius: 999px; padding: 3px; }
+  .lang button { background: none; border: 0; font: 500 .8rem/1 var(--body); color: var(--ink-soft); padding: .5rem .75rem; border-radius: 999px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--ink); color: var(--white); }
+  .btn {
+    display: inline-flex; align-items: center; gap: .6rem; padding: 1rem 1.6rem; border-radius: 999px;
+    font: 500 1rem/1 var(--body); text-decoration: none; border: 0; cursor: pointer;
+    transition: transform .25s var(--ease), background-color .2s, color .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: scale(.97); }
+  .btn svg { width: 1.1rem; height: 1.1rem; flex: none; }
+  .btn-ink { background: var(--ink); color: var(--white); }
+  .btn-ink:hover { background: var(--pista-deep); }
+  .btn-apricot { background: var(--apricot); color: var(--ink); }
+  .btn-apricot:hover { background: #F69B47; }
+  .btn-ghost { background: rgba(255,255,255,.8); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(28,42,18,.18); backdrop-filter: blur(8px); }
+  .bar .btn { padding: .75rem 1.15rem; font-size: .9rem; }
+
+  /* ---------- hero: 3D photo flight ---------- */
+  .hero { position: relative; height: 340vh; }
+  .stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+  #gl { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .no-webgl #gl { display: none; }
+  .no-webgl .stage { background: url(img/vitrine.jpg) center/cover; }
+  .hero-front {
+    position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+    padding: 6rem var(--pad) 3rem; pointer-events: none;
+  }
+  .hero-front > * { pointer-events: auto; }
+  .hero h1 {
+    margin: 0; font: 700 clamp(3.6rem, 15.5vw, 16rem)/.9 var(--display); letter-spacing: -.055em;
+    color: var(--ink); white-space: nowrap;
+  }
+  .hero h1 .ch { display: inline-block; will-change: transform; }
+  .hero h1 .mask { display: inline-block; overflow: hidden; padding: 0 .02em .08em; vertical-align: top; }
+  .hero-lead { margin: 1.5rem auto 2rem; max-width: 30rem; font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.5; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+  .hero-meta { position: absolute; left: var(--pad); right: var(--pad); bottom: 1.75rem; display: flex; justify-content: space-between; gap: 1rem; font-size: .9rem; color: var(--ink-soft); }
+  .hero-meta strong { color: var(--ink); font-weight: 500; }
+  .hero-end {
+    position: absolute; inset: 0; display: grid; place-items: center; padding: 0 var(--pad);
+    text-align: center; opacity: 0; pointer-events: none;
+  }
+  .hero-end p { margin: 0; max-width: 18ch; font: 500 clamp(2rem, 5.4vw, 5rem)/1.05 var(--display); letter-spacing: -.035em; }
+
+  /* ---------- manifest ---------- */
+  .manifest { padding: clamp(6rem, 16vh, 12rem) var(--pad); }
+  .manifest p { margin: 0; max-width: 22ch; font: 500 clamp(1.9rem, 4.6vw, 4.3rem)/1.12 var(--display); letter-spacing: -.035em; }
+  .manifest .w { opacity: .14; }
+  .manifest-note { display: flex; gap: 3rem 4rem; flex-wrap: wrap; margin: 4rem 0 0; color: var(--ink-soft); font-size: 1rem; }
+  .manifest-note b { display: block; font: 700 clamp(2rem, 3.4vw, 3rem)/1 var(--display); color: var(--ink); letter-spacing: -.03em; margin-bottom: .35rem; }
+
+  /* ---------- seasons: horizontal ---------- */
+  .seasons { position: relative; overflow: hidden; background: var(--pista-pale); }
+  .track { display: flex; height: 100vh; height: 100svh; will-change: transform; }
+  .panel { flex: none; height: 100%; display: grid; align-items: center; padding: 6rem var(--pad) 3rem; }
+  .panel-intro { width: min(46rem, 80vw); }
+  .panel-intro h2 { margin: 0 0 1.5rem; font: 700 clamp(2.4rem, 5vw, 4.6rem)/1 var(--display); letter-spacing: -.045em; }
+  .panel-intro p { margin: 0; max-width: 28rem; font-size: 1.15rem; color: var(--ink-soft); }
+  .season { width: min(88vw, 92rem); grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 4vw, 4rem); background: var(--tint); }
+  .season figure { margin: 0; height: min(72vh, 46rem); border-radius: 2rem; overflow: hidden; position: relative; }
+  .season figure img { position: absolute; inset: -6% -12%; width: 124%; height: 112%; object-fit: cover; max-width: none; }
+  .season-name { margin: 0 0 1.25rem; font: 700 clamp(3.5rem, 9vw, 9rem)/.85 var(--display); letter-spacing: -.06em; color: var(--deep); }
+  .season h3 { margin: 0 0 .75rem; font: 500 clamp(1.25rem, 1.8vw, 1.6rem)/1.25 var(--display); letter-spacing: -.02em; }
+  .season p { margin: 0 0 1.5rem; max-width: 30rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+  .chips li { padding: .5rem 1rem; border-radius: 999px; background: rgba(255,255,255,.7); font-size: .95rem; }
+
+  /* ---------- depth layer (WebGL over figures) ---------- */
+  #gl2 { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 30; pointer-events: none; visibility: hidden; }
+  figure.gl-on img { opacity: 0; }
+
+  /* ---------- 360 ring ---------- */
+  .ring { position: relative; height: 280vh; background: var(--white); }
+  .ring-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+  .ring-word {
+    position: absolute; inset: 0; display: grid; place-items: center; margin: 0; pointer-events: none;
+    font: 700 clamp(5rem, 24vw, 26rem)/.8 var(--display); letter-spacing: -.07em; color: #E6EED3; white-space: nowrap;
+  }
+  #gl3 { position: absolute; inset: 0; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; }
+  #gl3:active { cursor: grabbing; }
+  .ring-copy { position: absolute; left: var(--pad); top: 5.5rem; max-width: 26rem; pointer-events: none; }
+  .ring-copy h2 { margin: 0 0 .5rem; font: 700 clamp(2rem, 4vw, 3.6rem)/1 var(--display); letter-spacing: -.045em; }
+  .ring-copy p { margin: 0; color: var(--ink-soft); }
+  .ring-count { position: absolute; right: var(--pad); top: 6.2rem; font: 500 1rem/1 var(--display); color: var(--ink-soft); }
+  .no-webgl .ring { height: auto; }
+  .no-webgl .ring-stage { position: relative; height: 60vh; }
+
+  /* ---------- loader + cursor ---------- */
+  .loader {
+    position: fixed; inset: 0; z-index: 100; background: var(--ink); color: var(--pista);
+    display: grid; place-items: center; transition: transform 1s cubic-bezier(.8,0,.2,1);
+  }
+  .loader.done { transform: translateY(-100%); }
+  .loader b { font: 700 clamp(3rem, 12vw, 10rem)/1 var(--display); letter-spacing: -.06em; color: var(--white); }
+  .loader span { position: absolute; right: var(--pad); bottom: 2rem; font: 500 clamp(2rem, 6vw, 5rem)/1 var(--display); letter-spacing: -.04em; }
+  .cursor {
+    position: fixed; left: 0; top: 0; z-index: 90; width: 2.25rem; height: 2.25rem; margin: -1.125rem 0 0 -1.125rem;
+    border: 1.5px solid #fff; border-radius: 50%; pointer-events: none; mix-blend-mode: difference;
+    display: grid; place-items: center; font: 500 .9rem/1 var(--body); color: #000;
+    transition: width .3s, height .3s, margin .3s, background-color .3s;
+  }
+  .cursor.big { width: 4.5rem; height: 4.5rem; margin: -2.25rem 0 0 -2.25rem; background: #fff; }
+  .cursor.drag { width: 5.5rem; height: 5.5rem; margin: -2.75rem 0 0 -2.75rem; background: #fff; }
+  @media (hover: none) { .cursor { display: none; } }
+
+  /* ---------- marquee ---------- */
+  .marquee { overflow: hidden; background: var(--ink); color: var(--pista); padding: 1.6rem 0; }
+  .marquee-row { display: flex; width: max-content; animation: run 38s linear infinite; }
+  .marquee span { display: inline-flex; align-items: center; gap: 2.5rem; padding-right: 2.5rem; font: 500 clamp(1.6rem, 3.4vw, 3rem)/1 var(--display); letter-spacing: -.03em; white-space: nowrap; }
+  .marquee svg { width: 1.6rem; height: 1.6rem; color: var(--apricot); }
+  @keyframes run { to { transform: translateX(-50%); } }
+
+  /* ---------- reels ---------- */
+  .reels { padding: clamp(6rem, 14vh, 10rem) 0; background: var(--ink); color: var(--white); overflow: hidden; }
+  .reels[hidden] { display: none; }
+  .reels-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.5rem; padding: 0 var(--pad); margin-bottom: 3rem; }
+  .reels-head h2 { margin: 0; font: 700 clamp(2.4rem, 5vw, 4.6rem)/1 var(--display); letter-spacing: -.045em; }
+  .reels-head p { margin: 0; max-width: 24rem; color: var(--pista); }
+  .reels-head a { color: var(--white); }
+  .reel-row { display: flex; gap: clamp(1rem, 2vw, 1.75rem); padding: 0 var(--pad); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .reel-row::-webkit-scrollbar { display: none; }
+  .reel {
+    position: relative; flex: none; width: clamp(15rem, 22vw, 21rem); aspect-ratio: 9/16; border-radius: 1.75rem; overflow: hidden;
+    background: #2A3A1E; scroll-snap-align: start; cursor: pointer; border: 0; padding: 0; color: inherit;
+  }
+  .reel:nth-child(even) { margin-top: 3rem; }
+  .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+  .reel:hover video { transform: scale(1.04); }
+  .reel .sound {
+    position: absolute; right: .9rem; bottom: .9rem; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+    display: grid; place-items: center; background: rgba(28,42,18,.55); backdrop-filter: blur(8px);
+  }
+  .reel .sound svg { width: 1.15rem; height: 1.15rem; }
+  .reel .on-icon { display: none; }
+  .reel[aria-pressed="true"] .on-icon { display: block; }
+  .reel[aria-pressed="true"] .off-icon { display: none; }
+
+  .reel-embed { flex: none; width: clamp(20rem, 24vw, 23rem); height: 640px; border-radius: 1.75rem; overflow: hidden; background: var(--white); scroll-snap-align: start; }
+  .reel-embed:nth-child(even) { margin-top: 3rem; }
+  .reel-embed iframe { display: block; width: 100%; height: 100%; border: 0; }
+
+  /* ---------- menu ---------- */
+  .menu { padding: clamp(6rem, 14vh, 10rem) var(--pad); }
+  .menu-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.5rem; margin-bottom: 3rem; }
+  .menu-head h2 { margin: 0; font: 700 clamp(2.4rem, 5vw, 4.6rem)/1 var(--display); letter-spacing: -.045em; }
+  .menu-head p { margin: 0; max-width: 24rem; color: var(--ink-soft); }
+  .menu-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(28,42,18,.15); }
+  .menu-row { display: grid; grid-template-columns: 1fr minmax(0, 26rem); align-items: center; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid rgba(28,42,18,.15); cursor: default; }
+  .menu-row h3 { margin: 0; font: 500 clamp(2rem, 5.5vw, 5.2rem)/1 var(--display); letter-spacing: -.05em; transition: transform .5s var(--ease), color .3s; }
+  .menu-row p { margin: 0; color: var(--ink-soft); }
+  .menu-row img.inline { display: none; }
+  .menu-row:hover h3 { transform: translateX(1.5rem); color: var(--pista-deep); }
+  .follow {
+    position: fixed; left: 0; top: 0; z-index: 40; width: 22rem; aspect-ratio: 4/5; border-radius: 1.5rem; overflow: hidden;
+    pointer-events: none; opacity: 0; box-shadow: 0 30px 60px -20px rgba(28,42,18,.35);
+  }
+  .follow img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s; }
+  .follow img.on { opacity: 1; }
+
+  /* ---------- visit ---------- */
+  .visit { background: var(--pista); padding: clamp(6rem, 14vh, 10rem) var(--pad); }
+  .visit-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(2rem, 6vw, 6rem); align-items: stretch; }
+  .visit h2 { margin: 0 0 2.5rem; font: 700 clamp(2.4rem, 5vw, 4.6rem)/1 var(--display); letter-spacing: -.045em; }
+  .visit dl { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; margin: 0 0 2.5rem; }
+  .visit dt { font-size: .9rem; color: var(--ink-soft); margin-bottom: .25rem; }
+  .visit dd { margin: 0; font-size: 1.1rem; font-weight: 500; }
+  .visit dd a { text-underline-offset: 3px; text-decoration-color: rgba(28,42,18,.35); }
+  .visit .hero-actions { justify-content: flex-start; }
+  .map { width: 100%; height: 100%; min-height: 28rem; border: 0; border-radius: 2rem; }
+
+  /* ---------- footer ---------- */
+  footer { background: var(--apricot); color: var(--ink); padding: 4rem var(--pad) 2rem; overflow: hidden; }
+  .foot-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; }
+  .foot-top a { text-decoration: none; font-weight: 500; }
+  .foot-top a:hover { text-decoration: underline; }
+  .foot-top nav { display: flex; gap: 1.5rem; }
+  .giant { margin: 3rem 0 0; font: 700 clamp(3.5rem, 17vw, 19rem)/.8 var(--display); letter-spacing: -.07em; white-space: nowrap; text-align: center; }
+  .foot-bottom { margin-top: 2rem; font-size: .85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .nav { display: none; }
+    .lang { margin-left: auto; }
+    .bar { gap: .75rem; }
+    .hero-meta { flex-direction: column; gap: .25rem; }
+    .track { display: block; height: auto; }
+    .panel { height: auto; padding: 4rem var(--pad); }
+    .panel-intro { width: auto; padding-top: 6rem; }
+    .season { width: auto; grid-template-columns: 1fr; }
+    .season figure { height: 62vw; border-radius: 1.5rem; }
+    .menu-row { grid-template-columns: 1fr; gap: .75rem; }
+    .visit-grid { grid-template-columns: 1fr; }
+    .visit dl { grid-template-columns: 1fr; }
+    .map { min-height: 20rem; }
+  }
+  @media (max-width: 520px) {
+    .bar .btn span { display: none; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+  }
+  @media (hover: none), (max-width: 900px) {
+    .follow { display: none; }
+    .menu-row img.inline { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 1.25rem; margin-top: .5rem; }
+    .menu-row:hover h3 { transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .loader { display: none; }
+    .marquee-row { animation: none; }
+    .manifest .w { opacity: 1; }
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js"
+} }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+<div class="loader" id="loader" aria-hidden="true"><b>L'artisan</b><span id="loadPct">0</span></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<canvas id="gl2" aria-hidden="true"></canvas>
+
+<header class="bar" id="bar">
+  <a class="wordmark" href="#top">L'artisan</a>
+  <nav class="nav" aria-label="Asosiy">
+    <a href="#mavsumlar" data-i18n="navSeasons">Mavsumlar</a>
+    <a href="#vitrina" data-i18n="navRing">Vitrina 360°</a>
+    <a href="#menyu" data-i18n="navMenu">Menyu</a>
+    <a href="#manzil" data-i18n="navVisit">Manzil</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Til / Язык">
+    <button type="button" data-lang="uz" aria-pressed="true">UZ</button>
+    <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+  </div>
+  <a class="btn btn-ink" href="https://t.me/Lartisanuz" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg>
+    <span data-i18n="order">Buyurtma</span>
+  </a>
+</header>
+
+<main id="top">
+  <!-- HERO: 3D flight through real photos -->
+  <section class="hero" aria-label="L'artisan">
+    <div class="stage">
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <div class="hero-front" id="heroFront">
+        <div>
+          <h1 aria-label="L'artisan"><span class="mask" aria-hidden="true">L'artisan</span></h1>
+          <p class="hero-lead" data-i18n="lead">O'zbekistonning eng yaxshi mahsulotlarini jelato va sorbetlarga aylantiramiz.</p>
+          <div class="hero-actions">
+            <a class="btn btn-apricot" href="https://t.me/Lartisanuz" target="_blank" rel="noopener" data-i18n="ctaOrder">Telegram orqali buyurtma berish</a>
+            <a class="btn btn-ghost" href="#manzil" data-i18n="ctaVisit">Qanday borish mumkin</a>
+          </div>
+        </div>
+        <div class="hero-meta">
+          <span><strong data-i18n="hoursVal">Har kuni 8:00–24:00</strong></span>
+          <span data-i18n="scrollHint">Pastga aylantiring</span>
+          <span><strong>Labzak, Abdulla Qodiriy 33</strong></span>
+        </div>
+      </div>
+      <div class="hero-end" id="heroEnd"><p data-i18n="heroEnd">Har bir ta'm mevaning eng shirin kunidan boshlanadi</p></div>
+    </div>
+  </section>
+
+  <section class="manifest" aria-label="Biz haqimizda">
+    <p id="manifestText" data-i18n="manifest">Meva qachon eng shirin bo'lsa, o'shanda olamiz. Ta'mlar mavsum bilan almashadi, shuning uchun vitrinamiz yil davomida hech qachon bir xil bo'lmaydi.</p>
+    <div class="manifest-note">
+      <div><b>8:00–24:00</b><span data-i18n="noteHours">har kuni ochiqmiz</span></div>
+      <div><b>4</b><span data-i18n="noteSeasons">mavsum, to'rt xil vitrina</span></div>
+    </div>
+  </section>
+
+  <section class="seasons" id="mavsumlar" aria-labelledby="seasons-title">
+    <div class="track" id="track">
+      <div class="panel panel-intro">
+        <div>
+          <h2 id="seasons-title" data-i18n="seasonsTitle">Vitrinada nima bo'lishini bozor hal qiladi</h2>
+          <p data-i18n="seasonsText">Mavsum tugasa, uning jelatosi ham vitrinadan ketadi. O'rniga keyingi mavsum keladi.</p>
+        </div>
+      </div>
+
+      <article class="panel season" style="--tint:#FBE1E3; --deep:#B3243C">
+        <figure data-depth="strawberry"><img src="img/strawberry.jpg" alt="" loading="lazy"></figure>
+        <div>
+          <p class="season-name" data-i18n="springWord">Bahor</p>
+          <h3 data-i18n="springTitle">Birinchi qulupnay va gilos</h3>
+          <p data-i18n="springText">May oyida bozorga ilk rezavorlar keladi. Ulardan yengil, nordon sorbetlar chiqadi.</p>
+          <ul class="chips" data-i18n="springList"><li>Qulupnay</li><li>Gilos</li><li>Yalpiz</li></ul>
+        </div>
+      </article>
+
+      <article class="panel season" style="--tint:#FDE3C4; --deep:#D2691A">
+        <figure data-depth="apricot"><img src="img/apricot.jpg" alt="" loading="lazy"></figure>
+        <div>
+          <p class="season-name" data-i18n="summerWord">Yoz</p>
+          <h3 data-i18n="summerTitle">O'rik, qovun, tarvuz</h3>
+          <p data-i18n="summerText">Jazirama issiqda pishgan mevalar shunchalik shirinki, sorbetga qo'shimcha hech narsa kerak emas.</p>
+          <ul class="chips" data-i18n="summerList"><li>O'rik</li><li>Qovun</li><li>Tarvuz</li><li>Shaftoli</li></ul>
+        </div>
+      </article>
+
+      <article class="panel season" style="--tint:#F3D4D6; --deep:#8E1B2E">
+        <figure data-depth="pomegranate"><img src="img/pomegranate.jpg" alt="" loading="lazy"></figure>
+        <div>
+          <p class="season-name" data-i18n="autumnWord">Kuz</p>
+          <h3 data-i18n="autumnTitle">Anor, behi, uzum</h3>
+          <p data-i18n="autumnText">Kuzgi mevalar quyuqroq ta'm beradi: anor donalari, xushbo'y behi, kech uzum.</p>
+          <ul class="chips" data-i18n="autumnList"><li>Anor</li><li>Behi</li><li>Uzum</li><li>Nok</li></ul>
+        </div>
+      </article>
+
+      <article class="panel season" style="--tint:#DFE9C8; --deep:#4E6B2A">
+        <figure data-depth="pistachio"><img src="img/pistachio.jpg" alt="" loading="lazy"></figure>
+        <div>
+          <p class="season-name" data-i18n="winterWord">Qish</p>
+          <h3 data-i18n="winterTitle">Pista va yong'oq</h3>
+          <p data-i18n="winterText">Sovuq oylarda yong'oqlar navbati: qovurilgan pista, yong'oq va qaymoqli jelato.</p>
+          <ul class="chips" data-i18n="winterList"><li>Pista</li><li>Yong'oq</li><li>Xurmo</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-row">
+      <span data-i18n="marquee">Jelato <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg> Sorbet <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg> Desertlar <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg> Limonad <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg></span>
+      <span data-i18n="marquee">Jelato <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg> Sorbet <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg> Desertlar <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg> Limonad <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg></span>
+    </div>
+  </div>
+
+  <section class="ring" id="vitrina" aria-labelledby="ring-title">
+    <div class="ring-stage">
+      <p class="ring-word" aria-hidden="true">L'artisan</p>
+      <canvas id="gl3" aria-hidden="true"></canvas>
+      <div class="ring-copy">
+        <h2 id="ring-title" data-i18n="ringTitle">Vitrina 360°</h2>
+        <p data-i18n="ringText">Aylantirish uchun suring yoki pastga scroll qiling.</p>
+      </div>
+      <div class="ring-count" id="ringCount" aria-hidden="true">01 / 12</div>
+    </div>
+  </section>
+
+  <section class="reels" id="videolar" aria-labelledby="reels-title" hidden>
+    <div class="reels-head">
+      <h2 id="reels-title" data-i18n="reelsTitle">Oshxonamizdan kadrlar</h2>
+      <p data-i18n="reelsText">Eng ko'p ko'rilgan reels'larimiz. Yangilari <a href="https://www.instagram.com/lartisan_uz/" target="_blank" rel="noopener">Instagram</a>'da.</p>
+    </div>
+    <div class="reel-row" id="reelRow"></div>
+  </section>
+
+  <section class="menu" id="menyu" aria-labelledby="menu-title">
+    <div class="menu-head">
+      <h2 id="menu-title" data-i18n="menuTitle">Menyu</h2>
+      <p data-i18n="menuText">Ta'mlar ro'yxati har kuni o'zgaradi. Bugungisini Instagram yoki Telegram'da ko'ring.</p>
+    </div>
+    <ul class="menu-list">
+      <li class="menu-row" data-img="0">
+        <h3 data-i18n="m1">Jelato</h3>
+        <p data-i18n="m1t">Sut va qaymoq asosida: pista, yong'oq va mavsumiy mevalar bilan.</p>
+        <img class="inline" src="img/vitrine.jpg" alt="" loading="lazy">
+      </li>
+      <li class="menu-row" data-img="1">
+        <h3 data-i18n="m2">Sorbetlar</h3>
+        <p data-i18n="m2t">Sutsiz: faqat meva, suv va shakar. Yozning eng yengil ta'mi.</p>
+        <img class="inline" src="img/watermelon.jpg" alt="" loading="lazy">
+      </li>
+      <li class="menu-row" data-img="2">
+        <h3 data-i18n="m3">Desertlar</h3>
+        <p data-i18n="m3t">Jelato bilan beriladigan mualliflik desertlari.</p>
+        <img class="inline" src="img/cone-street.jpg" alt="" loading="lazy">
+      </li>
+      <li class="menu-row" data-img="3">
+        <h3 data-i18n="m4">Limonad va choy</h3>
+        <p data-i18n="m4t">Mavsumiy mevali limonadlar va issiq choylar.</p>
+        <img class="inline" src="img/lemonade.jpg" alt="" loading="lazy">
+      </li>
+    </ul>
+  </section>
+
+  <section class="visit" id="manzil" aria-labelledby="visit-title">
+    <div class="visit-grid">
+      <div>
+        <h2 id="visit-title" data-i18n="visitTitle">Bizni toping</h2>
+        <dl>
+          <div><dt data-i18n="addrLbl">Manzil</dt><dd data-i18n="addrVal">Labzak, Abdulla Qodiriy ko'chasi, 33</dd></div>
+          <div><dt data-i18n="metroLbl">Mo'ljal</dt><dd data-i18n="metroVal">«Alisher Navoiy» metrosi</dd></div>
+          <div><dt data-i18n="hoursLbl">Ish vaqti</dt><dd data-i18n="hoursVal">Har kuni 8:00–24:00</dd></div>
+          <div><dt data-i18n="deliveryLbl">Yetkazib berish</dt><dd><a href="https://t.me/Lartisanuz" target="_blank" rel="noopener">t.me/Lartisanuz</a></dd></div>
+        </dl>
+        <div class="hero-actions">
+          <a class="btn btn-ink" href="https://t.me/Lartisanuz" target="_blank" rel="noopener" data-i18n="ctaOrder">Telegram orqali buyurtma berish</a>
+          <a class="btn btn-ghost" href="https://yandex.uz/maps/?text=Abdulla%20Qodiriy%2033%2C%20Tashkent" target="_blank" rel="noopener" data-i18n="ctaMap">Xaritada ochish</a>
+        </div>
+      </div>
+      <iframe class="map" title="L'artisan xaritada" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Abdulla%20Qodiriy%2033%2C%20Tashkent&z=16&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-top">
+    <span data-i18n="footLine">O'zbekistonning eng yaxshi mahsulotlaridan jelato va sorbetlar</span>
+    <nav aria-label="Ijtimoiy tarmoqlar">
+      <a href="https://www.instagram.com/lartisan_uz/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://t.me/Lartisanuz" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+  </div>
+  <p class="giant" aria-hidden="true">L'artisan</p>
+  <div class="foot-bottom"><span>© <span id="year"></span> L'artisan Ice Cream &amp; Desserts · <span data-i18n="demoNote">Konsept-dizayn, rasmiy sayt emas</span></span><span data-i18n="addrVal">Labzak, Abdulla Qodiriy ko'chasi, 33</span></div>
+</footer>
+
+<div class="follow" id="follow" aria-hidden="true">
+  <img src="img/vitrine.jpg" alt=""><img src="img/watermelon.jpg" alt=""><img src="img/cone-street.jpg" alt=""><img src="img/lemonade.jpg" alt="">
+</div>
+
+<script>
+/* ================= i18n ================= */
+const I18N = { ru: {
+  navSeasons: "Сезоны", navRing: "Витрина 360°", ringTitle: "Витрина 360°", ringText: "Потяните, чтобы повернуть, или листайте вниз.", navMenu: "Меню", navVisit: "Адрес", order: "Заказать",
+  lead: "Мы превращаем лучшие продукты Узбекистана в джелато и сорбеты.",
+  ctaOrder: "Заказать в Telegram", ctaVisit: "Как добраться", ctaMap: "Открыть на карте",
+  hoursVal: "Ежедневно 8:00–24:00", scrollHint: "Листайте вниз",
+  heroEnd: "Каждый вкус начинается с самого сладкого дня фрукта",
+  manifest: "Мы берём фрукт, когда он слаще всего. Вкусы меняются вместе с сезоном, поэтому наша витрина никогда не бывает одинаковой.",
+  noteHours: "открыты каждый день", noteSeasons: "сезона, четыре разные витрины",
+  seasonsTitle: "Что будет в витрине, решает базар",
+  seasonsText: "Заканчивается сезон, и его джелато уходит из витрины. На смену приходит следующий.",
+  springWord: "Весна", springTitle: "Первая клубника и черешня", springText: "В мае на базар приходят первые ягоды. Из них получаются лёгкие, кисловатые сорбеты.", springList: "<li>Клубника</li><li>Черешня</li><li>Мята</li>",
+  summerWord: "Лето", summerTitle: "Урюк, дыня, арбуз", summerText: "Фрукты, созревшие в летнюю жару, настолько сладкие, что сорбету больше ничего не нужно.", summerList: "<li>Урюк</li><li>Дыня</li><li>Арбуз</li><li>Персик</li>",
+  autumnWord: "Осень", autumnTitle: "Гранат, айва, виноград", autumnText: "Осенние фрукты дают более глубокий вкус: зёрна граната, ароматная айва, поздний виноград.", autumnList: "<li>Гранат</li><li>Айва</li><li>Виноград</li><li>Груша</li>",
+  winterWord: "Зима", winterTitle: "Фисташка и грецкий орех", winterText: "В холодные месяцы черёд орехов: жареная фисташка, грецкий орех и сливочное джелато.", winterList: "<li>Фисташка</li><li>Грецкий орех</li><li>Хурма</li>",
+  reelsTitle: "Кадры с нашей кухни", reelsText: "Наши самые популярные reels. Новые в <a href=\"https://www.instagram.com/lartisan_uz/\" target=\"_blank\" rel=\"noopener\">Instagram</a>.",
+  menuTitle: "Меню", menuText: "Список вкусов меняется каждый день. Сегодняшний смотрите в Instagram или Telegram.",
+  m1: "Джелато", m1t: "На молоке и сливках: фисташка, орехи и сезонные фрукты.",
+  m2: "Сорбеты", m2t: "Без молока: только фрукт, вода и сахар. Самый лёгкий вкус лета.",
+  m3: "Десерты", m3t: "Авторские десерты, которые подают с джелато.",
+  m4: "Лимонады и чай", m4t: "Сезонные фруктовые лимонады и горячий чай.",
+  visitTitle: "Как нас найти", addrLbl: "Адрес", addrVal: "Лабзак, улица Абдуллы Кадыри, 33",
+  metroLbl: "Ориентир", metroVal: "Метро «Алишера Навои»", hoursLbl: "Часы работы", deliveryLbl: "Доставка",
+  footLine: "Джелато и сорбеты из лучших продуктов Узбекистана", demoNote: "Концепт-дизайн, не официальный сайт"
+} };
+const nodes = [...document.querySelectorAll("[data-i18n]")];
+I18N.uz = {}; nodes.forEach(n => { I18N.uz[n.dataset.i18n] ??= n.innerHTML; });
+const marqueeRu = I18N.uz.marquee.replace("Desertlar", "Десерты").replace("Jelato", "Джелато").replace("Sorbet", "Сорбет").replace("Limonad", "Лимонад");
+I18N.ru.marquee = marqueeRu;
+window.onLangChange = () => {};
+function setLang(lang) {
+  const dict = I18N[lang] || I18N.uz;
+  nodes.forEach(n => { const v = dict[n.dataset.i18n]; if (v != null) n.innerHTML = v; });
+  document.documentElement.lang = lang;
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  try { localStorage.setItem("lartisan-lang", lang); } catch {}
+  window.onLangChange();
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+let savedLang = null; try { savedLang = localStorage.getItem("lartisan-lang"); } catch {}
+if (savedLang === "ru") setLang("ru");
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script type="module">
+import * as THREE from "three";
+
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hasGsap = !!window.gsap;
+if (hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+/* ================= preloader ================= */
+let started = false;
+const startHooks = [];
+function onStart(fn) { started ? fn() : startHooks.push(fn); }
+function begin() {
+  if (started) return; started = true;
+  document.getElementById("loader").classList.add("done");
+  startHooks.forEach(f => f());
+}
+const pctEl = document.getElementById("loadPct");
+const pct = { v: 0 };
+THREE.DefaultLoadingManager.onProgress = (url, loaded, total) => {
+  const target = Math.round(loaded / total * 100);
+  if (hasGsap) gsap.to(pct, { v: target, duration: 0.4, overwrite: true, onUpdate: () => { pctEl.textContent = Math.round(pct.v); } });
+  else pctEl.textContent = target;
+};
+THREE.DefaultLoadingManager.onLoad = () => setTimeout(begin, 350);
+setTimeout(begin, 7000); // never block the page on a slow image
+if (reduce) begin();
+
+/* ================= smooth scroll ================= */
+let lenis = null, scrollVel = 0;
+if (window.Lenis && !reduce && hasGsap) {
+  lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+  lenis.on("scroll", e => { scrollVel = e.velocity; ScrollTrigger.update(); });
+  gsap.ticker.add(t => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+    const id = a.getAttribute("href"); if (id.length < 2) return;
+    const el = document.querySelector(id); if (!el) return;
+    e.preventDefault(); lenis.scrollTo(el, { offset: id === "#mavsumlar" ? 0 : -40 });
+  }));
+}
+
+/* ================= header hide/show ================= */
+const bar = document.getElementById("bar");
+let lastY = 0;
+addEventListener("scroll", () => {
+  const y = scrollY;
+  bar.classList.toggle("is-solid", y > innerHeight * 3);
+  bar.classList.toggle("is-hidden", y > lastY && y > 200);
+  lastY = y;
+}, { passive: true });
+
+/* ================= hero title letters ================= */
+const mask = document.querySelector(".hero h1 .mask");
+mask.innerHTML = [...mask.textContent].map(c => `<span class="ch">${c}</span>`).join("");
+if (hasGsap && !reduce) {
+  gsap.set(".hero h1 .ch", { yPercent: 110 });
+  gsap.set([".hero-lead", ".hero-actions", ".hero-meta"], { opacity: 0, y: 24 });
+  onStart(() => {
+    gsap.to(".hero h1 .ch", { yPercent: 0, duration: 1.4, ease: "expo.out", stagger: 0.05, delay: 0.45 });
+    gsap.to([".hero-lead", ".hero-actions", ".hero-meta"], { opacity: 1, y: 0, duration: 1.1, ease: "power3.out", stagger: 0.1, delay: 1.0 });
+  });
+}
+
+/* ================= hero 3D: photo flight ================= */
+const hero = document.querySelector(".hero");
+const heroFront = document.getElementById("heroFront");
+const heroEnd = document.getElementById("heroEnd");
+let heroP = 0;
+if (hasGsap) {
+  ScrollTrigger.create({ trigger: hero, start: "top top", end: "bottom bottom", onUpdate: s => { heroP = s.progress; } });
+}
+function heroOverlay(p) {
+  const out = THREE.MathUtils.smoothstep(p, 0.0, 0.14);
+  heroFront.style.opacity = String(1 - out);
+  heroFront.style.transform = `scale(${1 + out * 0.25})`;
+  heroFront.style.visibility = out > 0.99 ? "hidden" : "visible";
+  const e = THREE.MathUtils.smoothstep(p, 0.78, 0.9) * (1 - THREE.MathUtils.smoothstep(p, 0.97, 1.0));
+  heroEnd.style.opacity = String(e);
+  heroEnd.style.transform = `translateY(${(1 - e) * 30}px)`;
+}
+
+const canvas = document.getElementById("gl");
+let renderer = null;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true }); }
+catch { document.documentElement.classList.add("no-webgl"); }
+
+if (renderer) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 80);
+
+  const vert = /* glsl */`
+    uniform float uVel, uRelief, uZoom;
+    uniform sampler2D uDepth;
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      vec3 p = position;
+      float d = texture2D(uDepth, (uv - 0.5) / uZoom + 0.5).r;
+      float e = smoothstep(0.0, 0.12, uv.x) * smoothstep(1.0, 0.88, uv.x) * smoothstep(0.0, 0.12, uv.y) * smoothstep(1.0, 0.88, uv.y);
+      p.z += (d - 0.4) * uRelief * e;                   // real relief from the depth map, edges stay flat
+      p.z += sin(uv.x * 3.14159) * uVel * 0.22;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+    }`;
+  const frag = /* glsl */`
+    uniform sampler2D uTex, uDepth;
+    uniform vec2 uSize, uMouse;
+    uniform float uOpacity, uVel, uRadius, uZoom;
+    varying vec2 vUv;
+    float sdRound(vec2 p, vec2 b, float r) { vec2 q = abs(p) - b + r; return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - r; }
+    void main() {
+      vec2 p = (vUv - 0.5) * uSize;
+      float d = sdRound(p, uSize * 0.5, uRadius);
+      float a = 1.0 - smoothstep(-0.006, 0.006, d);
+      vec2 uv = (vUv - 0.5) / uZoom + 0.5;
+      uv += uMouse * (texture2D(uDepth, uv).r - 0.5) * 0.02;
+      float s = clamp(uVel, -1.0, 1.0) * 0.004;
+      vec3 c = vec3(texture2D(uTex, uv + vec2(s, 0.0)).r, texture2D(uTex, uv).g, texture2D(uTex, uv - vec2(s, 0.0)).b);
+      gl_FragColor = vec4(c, a * uOpacity);
+      #include <colorspace_fragment>
+    }`;
+
+  // hand-placed photo field: [image, x, y, z, height]
+  const LAYOUT = [
+    ["vitrine",        -4.7,  1.75, -1.0, 2.0],
+    ["cone-pink",       4.9,  1.2,  -2.5, 2.6],
+    ["pistachio",      -4.5, -2.3,  -3.5, 1.6],
+    ["apricot",         4.6, -2.4,  -5.0, 1.8],
+    ["cherry",         -3.0,  0.6, -11.0, 1.7],
+    ["cup",             2.8, -1.2, -13.0, 2.0],
+    ["strawberry",     -2.2,  1.7, -16.0, 1.6],
+    ["cone-street",     3.0,  0.4, -18.5, 1.9],
+    ["pomegranate",    -2.8, -1.3, -21.0, 1.8],
+    ["lemonade",        2.2,  1.4, -23.5, 2.4],
+    ["watermelon",     -2.4,  0.2, -26.0, 1.8],
+    ["market-summer",   2.6, -1.4, -28.5, 1.9],
+    ["cone-hand",      -2.0,  1.5, -31.0, 1.8],
+    ["apricot-tree",    2.4,  0.2, -33.5, 1.7],
+  ];
+  const CAM_START = 6, CAM_END = -31;
+  const loader = new THREE.TextureLoader();
+  const flatDepth = new THREE.DataTexture(new Uint8Array([77, 77, 77, 255]), 1, 1); flatDepth.needsUpdate = true;
+  const planes = [];
+  LAYOUT.forEach(([name, x, y, z, h], i) => {
+    const uniforms = {
+      uTex: { value: null }, uSize: { value: new THREE.Vector2(1, 1) }, uOpacity: { value: 0 },
+      uVel: { value: 0 }, uRadius: { value: 0.12 }, uZoom: { value: 1.08 },
+      uDepth: { value: flatDepth }, uRelief: { value: h * 0.22 }, uMouse: { value: new THREE.Vector2() },
+    };
+    const mat = new THREE.ShaderMaterial({ uniforms, vertexShader: vert, fragmentShader: frag, transparent: true, depthWrite: false });
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 96, 96), mat);
+    mesh.position.set(x, y, z);
+    mesh.rotation.y = -Math.sign(x) * 0.12;
+    mesh.visible = false;
+    mesh.userData = { base: new THREE.Vector3(x, y, z), phase: i * 1.7 };
+    scene.add(mesh);
+    planes.push(mesh);
+    loader.load(`img/${name}.jpg`, tex => {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      const aspect = tex.image.width / tex.image.height;
+      mesh.scale.set(h * aspect, h, 1);
+      uniforms.uSize.value.set(h * aspect, h);
+      uniforms.uTex.value = tex;
+      mesh.visible = true;
+    });
+    loader.load(`img/${name}-depth.jpg`, d => { uniforms.uDepth.value = d; });
+  });
+
+  let narrow = false;
+  function resize() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+    narrow = camera.aspect < 0.9;
+    const spread = narrow ? 0.55 : Math.max(1, camera.aspect / 1.6);
+    planes.forEach(m => { m.position.x = m.userData.base.x * spread; });
+  }
+  addEventListener("resize", resize); resize();
+
+  const mouse = new THREE.Vector2(), mouseS = new THREE.Vector2();
+  addEventListener("pointermove", e => mouse.set(e.clientX / innerWidth * 2 - 1, e.clientY / innerHeight * 2 - 1), { passive: true });
+
+  let camZ = CAM_START, vel = 0, intro = reduce ? 1 : 0;
+  const timer = new THREE.Timer(); timer.connect(document);
+  let visible = true;
+  new IntersectionObserver(([en]) => { visible = en.isIntersecting; }).observe(hero);
+
+  renderer.setAnimationLoop(() => {
+    timer.update();
+    if (!visible) return;
+    const dt = Math.min(timer.getDelta(), 0.05), t = timer.getElapsed();
+    if (started) intro = Math.min(1, intro + dt * 0.5);
+    const introE = 1 - Math.pow(1 - intro, 4);
+
+    const target = THREE.MathUtils.lerp(CAM_START, CAM_END, THREE.MathUtils.smoothstep(heroP, 0.04, 0.98));
+    camZ += (target - camZ) * (reduce ? 1 : Math.min(1, dt * 5));
+    const vTarget = THREE.MathUtils.clamp((scrollVel || 0) / 60, -1, 1) * 0.55; // gentle, capped bend
+    vel += (vTarget - vel) * Math.min(1, dt * 4);
+    mouseS.lerp(mouse, Math.min(1, dt * 3));
+
+    camera.position.set(mouseS.x * 0.5, -mouseS.y * 0.3, camZ + (1 - introE) * 10);
+    camera.lookAt(mouseS.x * 0.15, -mouseS.y * 0.1, camera.position.z - 10);
+
+    planes.forEach(m => {
+      const ahead = camera.position.z - m.position.z;
+      const gate = m.userData.base.z > -6 ? 1 : THREE.MathUtils.smoothstep(heroP, 0.03, 0.12);
+      const o = gate * THREE.MathUtils.smoothstep(ahead, 0.6, 2.6) * (1 - THREE.MathUtils.smoothstep(ahead, 20, 30));
+      m.material.uniforms.uOpacity.value = o * introE;
+      m.material.uniforms.uVel.value = reduce ? 0 : vel;
+      m.material.uniforms.uMouse.value.copy(mouseS);
+      m.position.y = m.userData.base.y + (reduce ? 0 : Math.sin(t * 0.6 + m.userData.phase) * 0.06);
+      m.visible = !!m.material.uniforms.uTex.value && o > 0.003;
+    });
+    heroOverlay(heroP);
+    renderer.render(scene, camera);
+  });
+} else {
+  addEventListener("scroll", () => heroOverlay(Math.min(1, scrollY / (hero.offsetHeight - innerHeight))), { passive: true });
+}
+
+/* ================= shared pointer + ticker ================= */
+const ptr = new THREE.Vector2(), ptrS = new THREE.Vector2();
+addEventListener("pointermove", e => ptr.set(e.clientX / innerWidth * 2 - 1, e.clientY / innerHeight * 2 - 1), { passive: true });
+const ticker = fn => hasGsap ? gsap.ticker.add(fn) : (function loop() { fn(); requestAnimationFrame(loop); })();
+const ZERO2 = new THREE.Vector2();
+
+const SDF = /* glsl */`
+  float edgeMask(vec2 uv) { return smoothstep(0.0, 0.12, uv.x) * smoothstep(1.0, 0.88, uv.x) * smoothstep(0.0, 0.12, uv.y) * smoothstep(1.0, 0.88, uv.y); }
+  float sdRound(vec2 p, vec2 b, float r) { vec2 q = abs(p) - b + r; return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - r; }
+  vec2 coverUv(vec2 uv, vec2 box, vec2 img) {
+    float r = (box.x / box.y) / (img.x / img.y);
+    return r > 1.0 ? vec2(uv.x, (uv.y - 0.5) / r + 0.5) : vec2((uv.x - 0.5) * r + 0.5, uv.y);
+  }
+`;
+
+/* ================= depth layer: 3D parallax on season photos ================= */
+(function depthLayer() {
+  const els = [...document.querySelectorAll("[data-depth]")];
+  const canvas = document.getElementById("gl2");
+  let r;
+  try { r = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true }); } catch { return; }
+  r.setPixelRatio(Math.min(devicePixelRatio, 2)); r.setClearColor(0x000000, 0);
+  const scene = new THREE.Scene();
+  const cam = new THREE.OrthographicCamera(-1, 1, 1, -1, -10, 10);
+  const loader = new THREE.TextureLoader();
+  const frag = SDF + /* glsl */`
+    uniform sampler2D uTex, uDepth; uniform vec2 uSize, uImg, uMouse;
+    uniform float uRadius, uReveal, uShift;
+    varying vec2 vUv;
+    void main() {
+      vec2 halfSize = uSize * 0.5 * (0.84 + 0.16 * uReveal);
+      float d = sdRound((vUv - 0.5) * uSize, halfSize, uRadius);
+      if (d > 0.5) discard;
+      vec2 uv = coverUv(vUv, uSize, uImg);
+      uv = (uv - 0.5) / (1.16 - 0.1 * uReveal) + 0.5;
+      vec2 dir = uMouse * 0.022 + vec2(uShift * 0.05, 0.0);
+      float z = texture2D(uDepth, uv).r;
+      uv += dir * (z - 0.45);
+      z = texture2D(uDepth, uv).r;                 // second tap refines the offset
+      uv += dir * (z - 0.45) * 0.35;
+      gl_FragColor = vec4(texture2D(uTex, uv).rgb, 1.0 - smoothstep(-0.5, 0.5, d));
+      #include <colorspace_fragment>
+    }`;
+  const vert = `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`;
+  const items = els.map(el => {
+    const name = el.dataset.depth;
+    const u = {
+      uTex: { value: null }, uDepth: { value: null }, uSize: { value: new THREE.Vector2(1, 1) }, uImg: { value: new THREE.Vector2(1, 1) },
+      uMouse: { value: new THREE.Vector2() }, uRadius: { value: 32 }, uReveal: { value: 0 }, uShift: { value: 0 },
+    };
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: u, vertexShader: vert, fragmentShader: frag, transparent: true }));
+    mesh.visible = false; scene.add(mesh);
+    let n = 0; const ready = () => { if (++n === 2) el.classList.add("gl-on"); };
+    loader.load(`img/${name}.jpg`, t => { t.colorSpace = THREE.SRGBColorSpace; u.uTex.value = t; u.uImg.value.set(t.image.width, t.image.height); ready(); });
+    loader.load(`img/${name}-depth.jpg`, t => { u.uDepth.value = t; ready(); });
+    return { el, mesh, u, reveal: 0 };
+  });
+  let W = 0, H = 0;
+  function resize() {
+    W = innerWidth; H = innerHeight; r.setSize(W, H, false);
+    Object.assign(cam, { left: -W / 2, right: W / 2, top: H / 2, bottom: -H / 2 }); cam.updateProjectionMatrix();
+  }
+  addEventListener("resize", resize); resize();
+  ticker(() => {
+    ptrS.lerp(ptr, 0.08);
+    let any = false;
+    for (const it of items) {
+      const b = it.el.getBoundingClientRect();
+      const on = it.el.classList.contains("gl-on") && b.bottom > 0 && b.top < H && b.right > 0 && b.left < W && b.width > 0;
+      it.mesh.visible = on; if (!on) continue; any = true;
+      it.mesh.position.set(b.left + b.width / 2 - W / 2, H / 2 - (b.top + b.height / 2), 0);
+      it.mesh.scale.set(b.width, b.height, 1);
+      it.u.uSize.value.set(b.width, b.height);
+      it.u.uRadius.value = W < 900 ? 24 : 32;
+      const target = reduce ? 1 : THREE.MathUtils.clamp(Math.min((H - b.top) / (H * 0.6), (W - b.left) / (W * 0.65)), 0, 1);
+      it.reveal += (target - it.reveal) * 0.12;
+      it.u.uReveal.value = THREE.MathUtils.smootherstep(it.reveal, 0, 1);
+      it.u.uShift.value = reduce ? 0 : ((b.left + b.width / 2) / W - 0.5) * 2 + ((b.top + b.height / 2) / H - 0.5);
+      it.u.uMouse.value.copy(reduce ? ZERO2 : ptrS);
+    }
+    canvas.style.visibility = any ? "visible" : "hidden";
+    if (any) r.render(scene, cam);
+  });
+})();
+
+/* ================= 360° ring ================= */
+(function ring() {
+  const section = document.getElementById("vitrina");
+  const canvas = document.getElementById("gl3");
+  const countEl = document.getElementById("ringCount");
+  let r;
+  try { r = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true }); } catch { return; }
+  r.setPixelRatio(Math.min(devicePixelRatio, 2)); r.setClearColor(0x000000, 0);
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+  const NAMES = ["cone-pink", "vitrine", "apricot", "cherry", "cup", "pistachio", "lemonade", "strawberry", "cone-street", "pomegranate", "watermelon", "market-summer"];
+  const N = NAMES.length, R = 4.4, ARC = Math.PI * 2 / N, LEN = ARC * 0.86, PH = 2.9;
+  const group = new THREE.Group(); scene.add(group);
+  const loader = new THREE.TextureLoader();
+  const vert = SDF + /* glsl */`
+    uniform sampler2D uDepth; uniform vec2 uSize, uImg;
+    varying vec2 vUv; varying float vFacing;
+    void main() {
+      vUv = uv;
+      float d = texture2D(uDepth, coverUv(uv, uSize, uImg)).r;
+      vec3 p = position + normal * (d - 0.4) * 0.3 * edgeMask(uv);   // photo becomes a relief on the ring
+      vec4 wp = modelMatrix * vec4(p, 1.0);
+      vFacing = dot(normalize((modelMatrix * vec4(normal, 0.0)).xyz), normalize(cameraPosition - wp.xyz));
+      gl_Position = projectionMatrix * viewMatrix * wp;
+    }`;
+  const frag = SDF + /* glsl */`
+    uniform sampler2D uTex; uniform vec2 uSize, uImg;
+    varying vec2 vUv; varying float vFacing;
+    void main() {
+      vec2 uv = vUv;
+      if (!gl_FrontFacing) uv.x = 1.0 - uv.x;
+      float d = sdRound((uv - 0.5) * uSize, uSize * 0.5, 0.16);
+      if (d > 0.0) discard;
+      vec3 c = texture2D(uTex, coverUv(uv, uSize, uImg)).rgb;
+      float back = gl_FrontFacing ? 0.0 : 0.72;            // far side of the ring fades into the page
+      float rim = smoothstep(0.0, 0.35, vFacing);
+      c = mix(c, vec3(1.0), back + (1.0 - rim) * 0.25 * (1.0 - back));
+      gl_FragColor = vec4(c, 1.0);
+      #include <colorspace_fragment>
+    }`;
+  NAMES.forEach((name, i) => {
+    const u = { uTex: { value: null }, uDepth: { value: null }, uSize: { value: new THREE.Vector2(R * LEN, PH) }, uImg: { value: new THREE.Vector2(1, 1) } };
+    const geo = new THREE.CylinderGeometry(R, R, PH, 40, 40, true, i * ARC - LEN / 2, LEN);
+    const mesh = new THREE.Mesh(geo, new THREE.ShaderMaterial({ uniforms: u, vertexShader: vert, fragmentShader: frag, side: THREE.DoubleSide }));
+    mesh.visible = false; group.add(mesh);
+    let n = 0; const ready = () => { if (++n === 2) mesh.visible = true; };
+    loader.load(`img/${name}.jpg`, t => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = r.capabilities.getMaxAnisotropy(); u.uTex.value = t; u.uImg.value.set(t.image.width, t.image.height); ready(); });
+    loader.load(`img/${name}-depth.jpg`, t => { u.uDepth.value = t; ready(); });
+  });
+
+  function resize() {
+    const w = canvas.clientWidth, h = canvas.clientHeight; if (!w) return;
+    r.setSize(w, h, false); cam.aspect = w / h;
+    const dist = cam.aspect < 1 ? 12.5 / cam.aspect * 0.62 : 11.2;
+    cam.position.set(0, 1.5, dist); cam.lookAt(0, -0.25, 0); cam.updateProjectionMatrix();
+  }
+  addEventListener("resize", resize); resize();
+
+  let sp = 0;
+  if (hasGsap) ScrollTrigger.create({ trigger: section, start: "top bottom", end: "bottom top", onUpdate: s => { sp = s.progress; } });
+  let drag = 0, dragV = 0, down = false, lastX = 0, rot = 0;
+  canvas.addEventListener("pointerdown", e => { down = true; lastX = e.clientX; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener("pointermove", e => { if (!down) return; const dx = e.clientX - lastX; lastX = e.clientX; dragV = dx * 0.005; drag += dragV; });
+  const up = () => { down = false; };
+  canvas.addEventListener("pointerup", up); canvas.addEventListener("pointercancel", up);
+  let vis = false; new IntersectionObserver(([en]) => { vis = en.isIntersecting; if (vis) resize(); }).observe(section);
+  let last = -1;
+  ticker(() => {
+    if (!vis) return;
+    if (!down) { drag += dragV; dragV *= 0.94; }
+    const target = -sp * Math.PI * 2 * 0.85 - drag;
+    rot += (target - rot) * (reduce ? 1 : 0.08);
+    group.rotation.y = rot;
+    group.rotation.x = 0.06 + (reduce ? 0 : ptrS.y * 0.05);
+    group.rotation.z = reduce ? 0 : -ptrS.x * 0.03;
+    const idx = ((Math.round(-rot / ARC) % N) + N) % N;
+    if (idx !== last) { last = idx; countEl.textContent = String(idx + 1).padStart(2, "0") + " / " + N; }
+    r.render(scene, cam);
+  });
+})();
+
+/* ================= cursor ================= */
+(function cursor() {
+  if (!hasGsap || !matchMedia("(hover: hover)").matches) return;
+  const c = document.getElementById("cursor");
+  const xTo = gsap.quickTo(c, "x", { duration: 0.35, ease: "power3" }), yTo = gsap.quickTo(c, "y", { duration: 0.35, ease: "power3" });
+  addEventListener("pointermove", e => { xTo(e.clientX); yTo(e.clientY); }, { passive: true });
+  document.addEventListener("pointerover", e => {
+    const t = e.target;
+    const onRing = !!t.closest("#gl3");
+    c.classList.toggle("big", !onRing && !!t.closest("a, button"));
+    c.classList.toggle("drag", onRing);
+    c.textContent = onRing ? "⟷" : "";
+  });
+})();
+
+/* ================= manifest word reveal ================= */
+let manifestTween = null;
+function buildManifest() {
+  const el = document.getElementById("manifestText");
+  el.innerHTML = el.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(" ");
+  if (!hasGsap || reduce) return;
+  manifestTween?.scrollTrigger?.kill(); manifestTween?.kill();
+  manifestTween = gsap.to(el.querySelectorAll(".w"), {
+    opacity: 1, stagger: 0.08, ease: "none",
+    scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 40%", scrub: true },
+  });
+}
+buildManifest();
+window.onLangChange = () => { buildManifest(); ScrollTrigger.refresh(); };
+
+/* ================= seasons horizontal ================= */
+if (hasGsap) {
+  const mm = gsap.matchMedia();
+  mm.add("(min-width: 901px) and (prefers-reduced-motion: no-preference)", () => {
+    const track = document.getElementById("track");
+    const dist = () => track.scrollWidth - innerWidth;
+    const tween = gsap.to(track, {
+      x: () => -dist(), ease: "none",
+      scrollTrigger: { trigger: "#mavsumlar", pin: true, scrub: 0.8, start: "top top", end: () => "+=" + dist(), invalidateOnRefresh: true },
+    });
+    track.querySelectorAll(".season").forEach(panel => {
+      gsap.from(panel.querySelector(".season-name"), {
+        yPercent: 40, opacity: 0, ease: "power2.out",
+        scrollTrigger: { trigger: panel, containerAnimation: tween, start: "left 70%", end: "left 30%", scrub: true },
+      });
+    });
+  });
+
+  /* section headings rise on entry */
+  if (!reduce) {
+    gsap.utils.toArray(".menu-head h2, .visit h2, .menu-row h3").forEach(h => gsap.from(h, {
+      y: 60, opacity: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: h, start: "top 88%" },
+    }));
+    gsap.from(".giant", { yPercent: 40, ease: "none", scrollTrigger: { trigger: "footer", start: "top bottom", end: "bottom bottom", scrub: true } });
+  }
+}
+
+/* ================= reels: videos/reel1.mp4 … reel8.mp4 ================= */
+(function reels() {
+  const section = document.getElementById("videolar"), row = document.getElementById("reelRow");
+  const icon = '<span class="sound" aria-hidden="true"><svg class="off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg><svg class="on-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></span>';
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    const v = e.target.querySelector("video");
+    if (e.isIntersecting && !reduce) v.play().catch(() => {}); else v.pause();
+  }), { threshold: 0.35 });
+  // Official Instagram embeds of @lartisan_uz reels (used when no local videos/reelN.mp4 files exist)
+  const REELS = ["DcnPkoehkv4", "Db7yqEnha_h", "Dc-auNxBZ4_", "DcGYIYZB2JG", "DbSTms7t5ge", "DbKZGC8NR4d", "Db7RLbEyAZH", "Db2LIhGNhmy"];
+  let shown = 0, settled = 0;
+  const settle = () => { if (++settled === 8 && shown === 0) useEmbeds(); };
+  function useEmbeds() {
+    row.innerHTML = REELS.map(code => `<div class="reel-embed"><iframe src="https://www.instagram.com/reel/${code}/embed/" loading="lazy" scrolling="no" allowtransparency="true" allow="encrypted-media; autoplay; clipboard-write" title="L'artisan Instagram reel"></iframe></div>`).join("");
+    section.hidden = false;
+    document.querySelectorAll('[data-i18n="reelsText"]').forEach(n => n.dataset.mode = "embed");
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  }
+  for (let i = 1; i <= 8; i++) {
+    const btn = document.createElement("button");
+    btn.className = "reel"; btn.type = "button"; btn.setAttribute("aria-pressed", "false");
+    btn.setAttribute("aria-label", "Video " + i);
+    btn.hidden = true;
+    btn.innerHTML = `<video muted loop playsinline preload="metadata" src="videos/reel${i}.mp4"></video>${icon}`;
+    const v = btn.querySelector("video");
+    v.addEventListener("loadedmetadata", () => {
+      btn.hidden = false; settle();
+      if (!shown++) { section.hidden = false; if (window.ScrollTrigger) ScrollTrigger.refresh(); }
+      io.observe(btn);
+    });
+    v.addEventListener("error", () => { btn.remove(); settle(); });
+    btn.addEventListener("click", () => {
+      const turnOn = v.muted;
+      row.querySelectorAll("video").forEach(o => { o.muted = true; o.closest(".reel").setAttribute("aria-pressed", "false"); });
+      v.muted = !turnOn; btn.setAttribute("aria-pressed", String(turnOn));
+      if (turnOn) v.play().catch(() => {});
+    });
+    row.appendChild(btn);
+  }
+})();
+
+/* ================= menu: image follows cursor ================= */
+const follow = document.getElementById("follow");
+const fimgs = follow.querySelectorAll("img");
+if (hasGsap && matchMedia("(hover: hover) and (min-width: 901px)").matches) {
+  gsap.set(follow, { xPercent: -50, yPercent: -50, scale: 0.6 });
+  const xTo = gsap.quickTo(follow, "x", { duration: 0.6, ease: "power3" });
+  const yTo = gsap.quickTo(follow, "y", { duration: 0.6, ease: "power3" });
+  const rTo = gsap.quickTo(follow, "rotation", { duration: 0.8, ease: "power3" });
+  let px = 0;
+  addEventListener("pointermove", e => { xTo(e.clientX); yTo(e.clientY); rTo(gsap.utils.clamp(-12, 12, (e.clientX - px) * 0.6)); px = e.clientX; }, { passive: true });
+  document.querySelectorAll(".menu-row").forEach(row => {
+    row.addEventListener("mouseenter", () => {
+      fimgs.forEach((im, i) => im.classList.toggle("on", i === +row.dataset.img));
+      gsap.to(follow, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" });
+    });
+    row.addEventListener("mouseleave", () => gsap.to(follow, { opacity: 0, scale: 0.6, duration: 0.4, ease: "power3.in" }));
+  });
+}
+</script>
+</body>
+</html>
